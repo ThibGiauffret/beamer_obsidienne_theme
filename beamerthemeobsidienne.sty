@@ -1,0 +1,261 @@
+%---------------------------------------------------------------------
+% THÈME OBSIDIENNE POUR BEAMER
+% Version 1.0
+% Tous droits réservés (C) Th. G
+% Ce thème est mis à disposition sous license Creative Commons BY NC SA
+% Disponible au téléchargement sur : http://thibault.giauffret.free.fr/
+%---------------------------------------------------------------------
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage[most]{tcolorbox}
+\usepackage{multicol}
+
+% Colors
+\definecolor{gray75}{gray}{0.75}
+\definecolor{myred}{HTML}{D62626}
+\definecolor{myblue}{HTML}{1053AF}
+\definecolor{mygreen}{HTML}{2E8B73}
+\definecolor{myorange}{HTML}{F29F00}
+
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{subtitle page header}{fg=gray!50!white}
+\setbeamercolor*{title page bottom}{bg=black!80!white, fg=white}
+\setbeamercolor*{section page bottom}{bg=black!80!white, fg=white}
+\setbeamercolor*{author}{fg=black}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor{sidebar}{bg=black!80!white,fg=white}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{section frametitle}{fg=black!50!white}
+\setbeamercolor{page}{fg=black}
+\setbeamercolor{navbar}{fg=black!50!white}
+\setbeamercolor{section number projected}{bg=myred,fg=white}
+\setbeamercolor{block title}{bg=blue!30,fg=black}
+\setbeamercolor{section in toc}{fg=myred}
+\setbeamercolor{subsection in toc}{fg=myblue}
+\setbeamercolor{block title alerted}{fg=white,bg=myred!75}
+\setbeamercolor{block body alerted}{fg=black,bg=myred!10!white}
+\setbeamercolor{alerted text}{fg=black}
+\setbeamercolor{block title}{fg=white,bg=myblue!75}
+\setbeamercolor{block body}{fg=black,bg=myblue!10!white}
+\setbeamercolor{block title example}{fg=white,bg=mygreen!75}
+\setbeamercolor{block body example}{fg=black,bg=mygreen!10!white}
+
+% Fonts
+
+\setbeamerfont{section number projected}{size=\large}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{section frametitle font}{size=\normalsize,series=\bfseries}
+\setbeamerfont{author}{size=\normalsize,series=\bfseries}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize}
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large,series=\bfseries}
+
+% Settings
+
+\setbeamertemplate{blocks}[rounded]%
+[shadow=false]
+
+\usefonttheme{structurebold} % Style de police
+
+% Blocks
+
+
+
+% Outlines
+\ifx\outline\undefined
+\AtBeginSection[]
+{}
+\else
+	\if\outline1
+	\AtBeginSection[]
+	{
+		\begin{frame}<beamer>
+		
+		\begin{center}
+			\Large\textbf{Plan}
+			
+			\begin{tikzpicture}
+			\draw [draw=black!80!white, line width = 4pt,line cap=round] (0,0) -- (-3,0);
+			\end{tikzpicture}
+			\vspace{0.5cm}
+		\end{center}
+		
+		\begin{tcolorbox}[enhanced,boxrule=0.6pt,sharp corners,colback=white,drop lifted shadow]
+			\begin{columns}[t]
+				\begin{column}{.5\textwidth}
+					\tableofcontents[currentsection,sections={1-3}]
+				\end{column}
+				\begin{column}{.5\textwidth}
+					\tableofcontents[currentsection,sections={4-20}]
+				\end{column}
+			\end{columns}
+		\end{tcolorbox}
+		
+	\end{frame}
+	}
+	\fi
+
+\fi
+
+% Inner theme
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background}{}
+
+% Title page
+\defbeamertemplate*{title page}{perso}[1][]
+{ 	
+	\hspace{-0.63cm}
+	\begin{beamercolorbox}[ht=0.4\paperheight,wd=\paperwidth]{top title}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{beamercolorbox}[wd=\textwidth,center]{logo}
+					\ifx\logo\ifundefined
+					
+					\else
+						\if\logo1
+						\begin{center}
+							\includegraphics[width=0.7\textwidth]{logo}
+						\end{center}
+					\fi
+					\fi
+				\end{beamercolorbox}%
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{beamercolorbox}[right, rightskip=-0.5cm]{author}
+					\usebeamerfont{author}\insertauthor%
+				\end{beamercolorbox}
+				\begin{beamercolorbox}[right, rightskip=-0.5cm]{institute}
+					\usebeamerfont{institute}\insertinstitute%
+				\end{beamercolorbox}
+			\end{column}
+		\end{columns}
+		\vskip1cm%
+	\end{beamercolorbox}
+	
+	\hspace{-0.63cm}
+	\begin{beamercolorbox}[ht=0.6\paperheight, wd=\paperwidth, right]{title page bottom}
+		
+		\ifx\illustration\undefined
+			\begin{tcolorbox}[enhanced,frame hidden,interior hidden,sharp corners,left=0pt,right=0pt,top=0pt,bottom=0pt]
+				\vbox to 0.5\textheight{%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{title page header}
+						\usebeamerfont{title}\inserttitle\par%
+					\end{beamercolorbox}
+					\vspace{0.3cm}
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{subtitle page header}
+						\usebeamerfont{subtitle}\insertsubtitle
+					\end{beamercolorbox}
+					\vfill%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{date}
+						\usebeamerfont{date}\insertdate%
+					\end{beamercolorbox}
+					\vskip0.5cm%
+				}%
+			\end{tcolorbox}
+		\else
+			\if\illustration1
+			\begin{tcolorbox}[enhanced,frame hidden,interior hidden,sharp corners,left=0pt,right=0pt,top=0pt,bottom=0pt,
+				watermark graphics=illustration,watermark opacity=0.5,watermark color=white,watermark stretch=1]
+				\vbox to 0.5\textheight{%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{title page header}
+						\usebeamerfont{title}\inserttitle\par%
+					\end{beamercolorbox}
+					\vspace{0.3cm}
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{subtitle page header}
+						\usebeamerfont{subtitle}\insertsubtitle
+					\end{beamercolorbox}
+					\vfill%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{date}
+						\usebeamerfont{date}\insertdate%
+					\end{beamercolorbox}
+					\vskip0.5cm%
+				}%
+			\end{tcolorbox}
+			\else
+			\begin{tcolorbox}[enhanced,frame hidden,interior hidden,sharp corners,left=0pt,right=0pt,top=0pt,bottom=0pt]
+				\vbox to 0.5\textheight{%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{title page header}
+						\usebeamerfont{title}\inserttitle\par%
+					\end{beamercolorbox}
+					\vspace{0.3cm}
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{subtitle page header}
+						\usebeamerfont{subtitle}\insertsubtitle
+					\end{beamercolorbox}
+					\vfill%
+					\begin{beamercolorbox}[right, rightskip=0.5cm]{date}
+						\usebeamerfont{date}\insertdate%
+					\end{beamercolorbox}
+					\vskip0.5cm%
+				}%
+			\end{tcolorbox}
+		\fi
+		\fi
+		
+	\end{beamercolorbox}%
+	
+}
+
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.9\paperwidth,ht=3.5ex,dp=1.5ex,right]{navbar}%
+			\insertslidenavigationsymbol\insertframenavigationsymbol\insertsectionnavigationsymbol
+		\end{beamercolorbox}%
+		
+		\begin{beamercolorbox}[wd=.1\paperwidth,ht=3.5ex,dp=1.5ex,right]{page}%
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+		\end{beamercolorbox}}%
+		\vskip0pt%
+}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,scopes}
+
+\defbeamertemplate*{frametitle}{}
+{%
+	
+	\only<1>{%
+		\addtocontents{toc}{%
+			\protect\beamer@subsectionintoc{\the\c@section}{0}{%
+				\insertframetitle%
+			}{\the\c@page}{\the\c@part}{\the\beamer@tocsectionnumber}%
+		}%
+	}%
+	
+	\begin{beamercolorbox}[ht=3ex, wd=\textwidth, right]{section frametitle}
+		\usebeamerfont{section frametitle font}\insertsection
+	\end{beamercolorbox}
+	\vspace{-0.2cm}
+	\begin{beamercolorbox}[ht=3ex, wd=\textwidth, right]{frametitle}
+		\insertframetitle{}
+	\end{beamercolorbox}
+	\vskip-0.3cm%
+	\begin{beamercolorbox}[wd=13cm, right]{frameline}
+		\begin{tikzpicture}
+		\draw [draw=black!80!white, line width = 4pt,-round cap] (0,0) -- (-3,0);
+		\end{tikzpicture}
+	\end{beamercolorbox}
+}
+
+\useoutertheme[left,height=0pt,width=0.5cm]{sidebar}
+\setbeamertemplate{sidebar canvas left}[vertical shading][top=black!80!white,middle=black!80!white,bottom=black!80!white]
+\setbeamertemplate{sidebar left}{%
+	\rotatebox{90}{\begin{beamercolorbox}[ht=8ex,sep=1.8ex, wd=12cm]{sidebar}
+			\hskip2.3cm%
+			\tiny\usebeamerfont{author in head/foot}\insertshortauthor~ --- \usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}
+	}	
+}
+
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}[]
+
+\setbeamertemplate{headline}{}
+
+
+\mode<all>

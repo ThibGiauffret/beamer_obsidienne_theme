@@ -1,0 +1,75 @@
+%!TEX TS-program = xelatex
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\graphicspath{{figures/}} % Emplacement des figures.
+
+\def\illustration{1} % Illustration en première page (1=activé, 0=désactivé).
+					 % Penser à placer un fichier "illustration" dans le dossier des figures. Format préféré : 12,8cm par 4,8cm.
+					 
+\def\logo{1} % Logo en première page (1=activé, 0=désactivé).
+			 % Penser à placer un fichier "logo" dans le dossier des figures.
+						   
+\def\outline{1} % Plan à chaque début de section (1=activé, 0=désactivé).
+
+\usetheme{obsidienne} % Fichiers du thème obsidienne
+
+\title{Obsidienne} % Titre
+\subtitle{Un thème pour Beamer} % Sous-titre
+\date[\today]{\today} % Date
+\author[Th. G]{Thibault Giauffret\\ \href{http://thibault.giauffret.free.fr}{\texttt{thibault.giauffret.free.fr}}} % Auteur
+\institute{ENS de Lyon} % Etablissement
+
+\begin{document}
+	
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\section{Une section}
+\begin{frame}
+	\frametitle{Une première frame}
+	\begin{block}{Bloc standard}
+		Un bloc tout simple, par défaut.
+		Un texte sur un fond de couleur qui 
+		dépend, bien sûr, du thème choisi. 
+	\end{block}
+
+	\begin{alertblock}{Bloc standard}
+		Un bloc tout simple, par défaut.
+		Un texte sur un fond de couleur qui 
+		dépend, bien sûr, du thème choisi. 
+	\end{alertblock}
+
+	\begin{exampleblock}{Bloc standard}
+		Un bloc tout simple, par défaut.
+		Un texte sur un fond de couleur qui 
+		dépend, bien sûr, du thème choisi. 
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Une seconde frame}
+\begin{figure}[h!]
+	\includegraphics[width=0.4\textwidth]{tiger}
+	\caption{Une jolie image vectorielle}
+\end{figure}
+\end{frame}
+
+\section{Une seconde section}
+\begin{frame}
+\frametitle{Une première frame}
+\end{frame}
+
+\begin{frame}
+\frametitle{Une seconde frame}
+\end{frame}
+
+\section{Une seconde section}
+\section{Une troisième section}
+\section{Une quatrième section}
+\section{Une cinquième section}
+
+\end{document}
