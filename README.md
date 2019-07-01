@@ -7,11 +7,11 @@ Beamer est le pendant de Microsoft PowerPoint permettant de réaliser des prése
 De nombreux styles existent de manière native pour réaliser des présentations. Cependant, ne trouvant pas de thème me convenant, je me suis penché sur la création d’un thème personnalisé. </p>
 
 <p align="center">
-<img src="http://thibault.giauffret.free.fr/images/article_beamer/page1.svg"/>
+<img src="http://thibault.giauffret.free.fr/git/images/article_beamer/page1.svg"/>
 
-<img src="http://thibault.giauffret.free.fr/images/article_beamer/page2.svg"/>
+<img src="http://thibault.giauffret.free.fr/git/images/article_beamer/page2.svg"/>
 
-<img src="http://thibault.giauffret.free.fr/images/article_beamer/page3.svg"/>
+<img src="http://thibault.giauffret.free.fr/git/images/article_beamer/page3.svg"/>
 </p>
 
 <h2>A propos de la mise en forme</h2>
